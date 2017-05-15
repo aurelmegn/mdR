@@ -1,5 +1,4 @@
-var app = angular.module('app',['ui.router']);
-
+var app = angular.module('app',['ui.router','ngSanitize']);
 
 app.config(function($stateProvider,$urlRouterProvider)
 {
@@ -22,4 +21,3 @@ app.config(function($stateProvider,$urlRouterProvider)
 
 
 });
-

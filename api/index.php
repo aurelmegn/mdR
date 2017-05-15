@@ -1,57 +1,100 @@
 <?php
 
-$folder = "../";
+header("Content-Type: application/json");
+
+$data = [];
+
+//$data[];
 
 if (isset($_POST['folder']))
 {
-    $folder = $_POST['folder'];
+    $currentFolder = $_POST['folder'];
+
+}else{
+
+    $currentFolder = "./";
 }
 
-$rp = realpath($folder);
+$currentFolderRealPath = realpath($currentFolder);
 
-$filelist = scandir($rp);
+$currentFolderFileList = scandir($currentFolderRealPath,SCANDIR_SORT_ASCENDING);
 
-$folders = [];
+$currentFolderFileDetails = [];
 
-foreach ($filelist as $file) {
+$currentFolderNameLength = strlen($currentFolder);
 
-    if (!preg_match("[^\.]", $file)) {
+foreach ($currentFolderFileList as $currentFolderElement) {
 
-        $path = realpath($folder . $file);
+    if (!preg_match("[^\.]", $currentFolderElement)) {
 
-        if (is_dir($path)) {
+        $currentFolderNameLength = strlen($currentFolder);
 
-            array_push($folders, folderdetails($path,$file));
+        if(strrpos($currentFolder,"/") == $currentFolderNameLength-1){
 
-        } else {
-
-            array_push($folders, filedetails($path));
+            $path =  realpath($currentFolder . $currentFolderElement);
 
         }
+        else{
+
+
+            $path = realpath($currentFolder .'/'. $currentFolderElement);
+        }
+
+        if (file_exists($path)){
+
+            if (is_dir($path)) {
+
+                array_push($currentFolderFileDetails, getFolderDetails($path,$currentFolderElement));
+
+
+            } else {
+
+                array_push($currentFolderFileDetails, getFileDetails($path));
+
+            }
+
+        }
+
     }
 
 }
 
-function filedetails($path) {
+/**
+ * @param $path
+ * @return array
+ */
+function getFileDetails($path) {
 
     $infos = pathinfo($path);
 
-    return array(
+    try{
 
-        'type'=>'file',
+        return array(
 
-        'filename'=>$infos['filename'],
+            'type'=>'file',
 
-        'extension'=>$infos['extension'],
+            'filename'=> isset($infos['filename']) ? $infos['filename'] : null,
 
-        'basename'=>$infos['basename'],
+            'extension'=>isset($infos['extension']) ? $infos['extension'] : null ,
 
-        'abspath'=>$path
-    );
+            'basename'=>isset($infos['basename']) ? $infos['basename'] : null,
+
+            'abspath'=>$path
+        );
+    }catch (Exception $e){
+
+        return null;
+    }
+
 
 }
 
-function folderdetails($path,$file){
+/**
+ * @param $path
+ * @param $file
+ * @return array
+ */
+function getFolderDetails($path, $file){
 
     $dircontent = [];
 
@@ -104,6 +147,9 @@ function folderdetails($path,$file){
     );
 }
 
-$data = [];
 
-echo json_encode($folders);
+$data['currentFolder'] = $currentFolderRealPath;
+
+$data['folders'] = $currentFolderFileDetails;
+
+echo json_encode($data);

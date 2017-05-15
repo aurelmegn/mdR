@@ -1,0 +1,45 @@
+/* line 3, ../sass/_default.scss */
+.main .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 10%;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px;
+}
+/* line 22, ../sass/_default.scss */
+.main .content .contentNav {
+  height: 100%;
+  width: 30%;
+  border-right: 1px solid;
+  color: gray;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+/* line 35, ../sass/_default.scss */
+.main .content .contentNav .contentNavNav {
+  overflow: auto;
+  height: 89%;
+}
+/* line 40, ../sass/_default.scss */
+.main .content .contentNav .btn-back {
+  height: 7%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 98%;
+}
+/* line 52, ../sass/_default.scss */
+.main .content .contentOutput {
+  overflow-y: auto;
+  height: 100%;
+  width: 70%;
+  text-wrap: normal;
+}

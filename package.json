@@ -1,0 +1,37 @@
+{
+  "name": "phpxplorer",
+  "version": "1.0.0",
+  "description": "An file explorer web app write in php and angularjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiftSh/phpXplorer.git"
+  },
+  "keywords": [
+    "explore",
+    "file",
+    "angularjs"
+  ],
+  "author": "shiftSh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shiftSh/phpXplorer/issues"
+  
+  "homepage": "https://github.com/shiftSh/phpXplorer#readme",
+  "dependencies": {
+    "highlightjs":"8.9.1",
+    "angularjs": "^0.0.1",
+    "angular-highlightjs": "^0.7.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-htmlclean": "^2.7.14",
+    "gulp-spa": "^0.2.2",
+    "gulp-strip-comments": "^2.4.5",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2"
+  }
+}

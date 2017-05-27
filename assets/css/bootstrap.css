@@ -641,7 +641,6 @@ mark,
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 0.25rem;
   transition: all 0.2s ease-in-out;
   max-width: 100%;
   height: auto;
@@ -678,7 +677,6 @@ code {
   font-size: 90%;
   color: #bd4147;
   background-color: #f7f7f9;
-  border-radius: 0.25rem;
 }
 /* line 18, ../sass/bootstrap/_code.scss */
 a > code {
@@ -693,7 +691,6 @@ kbd {
   font-size: 90%;
   color: #fff;
   background-color: #292b2c;
-  border-radius: 0.2rem;
 }
 /* line 34, ../sass/bootstrap/_code.scss */
 kbd kbd {
@@ -2456,7 +2453,7 @@ pre code {
   background-image: none;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
+  border-radius: 0;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 /* line 35, ../sass/bootstrap/_forms.scss */
@@ -2553,7 +2550,6 @@ select.form-control:focus::-ms-value {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 0.2rem;
 }
 
 /* line 163, ../sass/bootstrap/_forms.scss */
@@ -2570,7 +2566,6 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
 }
 
 /* line 177, ../sass/bootstrap/_forms.scss */
@@ -2819,7 +2814,6 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   padding: 0.5rem 1rem;
   font-size: 1rem;
   line-height: 1.25;
-  border-radius: 0.25rem;
   transition: all 0.2s ease-in-out;
 }
 /* line 23, ../sass/bootstrap/mixins/_hover.scss */
@@ -3232,7 +3226,6 @@ fieldset[disabled] a.btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
 }
 
 /* line 141, ../sass/bootstrap/_buttons.scss */
@@ -3240,7 +3233,6 @@ fieldset[disabled] a.btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 0.2rem;
 }
 
 /* line 150, ../sass/bootstrap/_buttons.scss */
@@ -3345,7 +3337,6 @@ tbody.collapse.show {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
 }
 
 /* line 58, ../sass/bootstrap/_dropdown.scss */
@@ -3483,18 +3474,6 @@ tbody.collapse.show {
 .btn-group > .btn:first-child {
   margin-left: 0;
 }
-/* line 55, ../sass/bootstrap/_button-group.scss */
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-/* line 60, ../sass/bootstrap/_button-group.scss */
-.btn-group > .btn:last-child:not(:first-child),
-.btn-group > .dropdown-toggle:not(:first-child) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
 
 /* line 66, ../sass/bootstrap/_button-group.scss */
 .btn-group > .btn-group {
@@ -3504,19 +3483,6 @@ tbody.collapse.show {
 /* line 69, ../sass/bootstrap/_button-group.scss */
 .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0;
-}
-
-/* line 73, ../sass/bootstrap/_button-group.scss */
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-/* line 78, ../sass/bootstrap/_button-group.scss */
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 /* line 95, ../sass/bootstrap/_button-group.scss */
@@ -3566,33 +3532,10 @@ tbody.collapse.show {
 .btn-group-vertical > .btn:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
-/* line 155, ../sass/bootstrap/_button-group.scss */
-.btn-group-vertical > .btn:first-child:not(:last-child) {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-/* line 158, ../sass/bootstrap/_button-group.scss */
-.btn-group-vertical > .btn:last-child:not(:first-child) {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
 
 /* line 162, ../sass/bootstrap/_button-group.scss */
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0;
-}
-
-/* line 166, ../sass/bootstrap/_button-group.scss */
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-/* line 171, ../sass/bootstrap/_button-group.scss */
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
 
 /* line 191, ../sass/bootstrap/_button-group.scss */
@@ -3631,12 +3574,6 @@ tbody.collapse.show {
   display: flex;
   align-items: center;
 }
-/* line 35, ../sass/bootstrap/_input-group.scss */
-.input-group-addon:not(:first-child):not(:last-child),
-.input-group-btn:not(:first-child):not(:last-child),
-.input-group .form-control:not(:first-child):not(:last-child) {
-  border-radius: 0;
-}
 
 /* line 40, ../sass/bootstrap/_input-group.scss */
 .input-group-addon,
@@ -3656,7 +3593,6 @@ tbody.collapse.show {
   text-align: center;
   background-color: #eceeef;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
 }
 /* line 81, ../sass/bootstrap/_input-group.scss */
 .input-group-addon.form-control-sm,
@@ -3664,7 +3600,6 @@ tbody.collapse.show {
 .input-group-sm > .input-group-btn > .input-group-addon.btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  border-radius: 0.2rem;
 }
 /* line 87, ../sass/bootstrap/_input-group.scss */
 .input-group-addon.form-control-lg,
@@ -3672,7 +3607,6 @@ tbody.collapse.show {
 .input-group-lg > .input-group-btn > .input-group-addon.btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
-  border-radius: 0.3rem;
 }
 /* line 95, ../sass/bootstrap/_input-group.scss */
 .input-group-addon input[type="radio"],
@@ -3680,33 +3614,9 @@ tbody.collapse.show {
   margin-top: 0;
 }
 
-/* line 107, ../sass/bootstrap/_input-group.scss */
-.input-group .form-control:not(:last-child),
-.input-group-addon:not(:last-child),
-.input-group-btn:not(:last-child) > .btn,
-.input-group-btn:not(:last-child) > .btn-group > .btn,
-.input-group-btn:not(:last-child) > .dropdown-toggle,
-.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
 /* line 116, ../sass/bootstrap/_input-group.scss */
 .input-group-addon:not(:last-child) {
   border-right: 0;
-}
-
-/* line 119, ../sass/bootstrap/_input-group.scss */
-.input-group .form-control:not(:first-child),
-.input-group-addon:not(:first-child),
-.input-group-btn:not(:first-child) > .btn,
-.input-group-btn:not(:first-child) > .btn-group > .btn,
-.input-group-btn:not(:first-child) > .dropdown-toggle,
-.input-group-btn:not(:last-child) > .btn:not(:first-child),
-.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 /* line 128, ../sass/bootstrap/_input-group.scss */
@@ -3805,10 +3715,6 @@ tbody.collapse.show {
   background-size: 50% 50%;
 }
 
-/* line 78, ../sass/bootstrap/_custom-forms.scss */
-.custom-checkbox .custom-control-indicator {
-  border-radius: 0.25rem;
-}
 /* line 82, ../sass/bootstrap/_custom-forms.scss */
 .custom-checkbox .custom-control-input:checked ~ .custom-control-indicator {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
@@ -3854,7 +3760,6 @@ tbody.collapse.show {
   background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
   background-size: 8px 10px;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
   appearance: none;
 }
 /* line 149, ../sass/bootstrap/_custom-forms.scss */
@@ -3917,7 +3822,6 @@ tbody.collapse.show {
   user-select: none;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
 }
 /* line 230, ../sass/bootstrap/_custom-forms.scss */
 .custom-file-control:lang(en):empty::after {
@@ -3937,7 +3841,6 @@ tbody.collapse.show {
   color: #464a4c;
   background-color: #eceeef;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0 0.25rem 0.25rem 0;
 }
 /* line 252, ../sass/bootstrap/_custom-forms.scss */
 .custom-file-control:lang(en)::before {
@@ -3978,8 +3881,6 @@ tbody.collapse.show {
 /* line 39, ../sass/bootstrap/_nav.scss */
 .nav-tabs .nav-link {
   border: 1px solid transparent;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
 }
 /* line 23, ../sass/bootstrap/mixins/_hover.scss */
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
@@ -4001,14 +3902,8 @@ tbody.collapse.show {
 /* line 61, ../sass/bootstrap/_nav.scss */
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
 
-/* line 75, ../sass/bootstrap/_nav.scss */
-.nav-pills .nav-link {
-  border-radius: 0.25rem;
-}
 /* line 78, ../sass/bootstrap/_nav.scss */
 .nav-pills .nav-link.active, .show .nav-pills .nav-link {
   color: #fff;
@@ -4112,7 +4007,6 @@ tbody.collapse.show {
   line-height: 1;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
 }
 /* line 23, ../sass/bootstrap/mixins/_hover.scss */
 .navbar-toggler:focus, .navbar-toggler:hover {
@@ -4451,7 +4345,6 @@ tbody.collapse.show {
   flex-direction: column;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
 }
 
 /* line 14, ../sass/bootstrap/_card.scss */
@@ -4486,17 +4379,6 @@ tbody.collapse.show {
   margin-left: 1.25rem;
 }
 
-/* line 47, ../sass/bootstrap/_card.scss */
-.card > .list-group:first-child .list-group-item:first-child {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-}
-/* line 53, ../sass/bootstrap/_card.scss */
-.card > .list-group:last-child .list-group-item:last-child {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
 /* line 64, ../sass/bootstrap/_card.scss */
 .card-header {
   padding: 0.75rem 1.25rem;
@@ -4504,20 +4386,12 @@ tbody.collapse.show {
   background-color: #f7f7f9;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
-/* line 70, ../sass/bootstrap/_card.scss */
-.card-header:first-child {
-  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
-}
 
 /* line 75, ../sass/bootstrap/_card.scss */
 .card-footer {
   padding: 0.75rem 1.25rem;
   background-color: #f7f7f9;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
-}
-/* line 80, ../sass/bootstrap/_card.scss */
-.card-footer:last-child {
-  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
 }
 
 /* line 90, ../sass/bootstrap/_card.scss */
@@ -4710,21 +4584,16 @@ tbody.collapse.show {
 /* line 171, ../sass/bootstrap/_card.scss */
 .card-img {
   width: 100%;
-  border-radius: calc(0.25rem - 1px);
 }
 
 /* line 177, ../sass/bootstrap/_card.scss */
 .card-img-top {
   width: 100%;
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
 }
 
 /* line 182, ../sass/bootstrap/_card.scss */
 .card-img-bottom {
   width: 100%;
-  border-bottom-right-radius: calc(0.25rem - 1px);
-  border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
 @media (min-width: 576px) {
@@ -4759,41 +4628,6 @@ tbody.collapse.show {
     margin-left: 0;
     border-left: 0;
   }
-  /* line 227, ../sass/bootstrap/_card.scss */
-  .card-group .card:first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  /* line 230, ../sass/bootstrap/_card.scss */
-  .card-group .card:first-child .card-img-top {
-    border-top-right-radius: 0;
-  }
-  /* line 233, ../sass/bootstrap/_card.scss */
-  .card-group .card:first-child .card-img-bottom {
-    border-bottom-right-radius: 0;
-  }
-  /* line 237, ../sass/bootstrap/_card.scss */
-  .card-group .card:last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  /* line 240, ../sass/bootstrap/_card.scss */
-  .card-group .card:last-child .card-img-top {
-    border-top-left-radius: 0;
-  }
-  /* line 243, ../sass/bootstrap/_card.scss */
-  .card-group .card:last-child .card-img-bottom {
-    border-bottom-left-radius: 0;
-  }
-  /* line 248, ../sass/bootstrap/_card.scss */
-  .card-group .card:not(:first-child):not(:last-child) {
-    border-radius: 0;
-  }
-  /* line 251, ../sass/bootstrap/_card.scss */
-  .card-group .card:not(:first-child):not(:last-child) .card-img-top,
-  .card-group .card:not(:first-child):not(:last-child) .card-img-bottom {
-    border-radius: 0;
-  }
 }
 /* line 267, ../sass/bootstrap/_card.scss */
 .card-columns .card {
@@ -4818,7 +4652,6 @@ tbody.collapse.show {
   margin-bottom: 1rem;
   list-style: none;
   background-color: #eceeef;
-  border-radius: 0.25rem;
 }
 /* line 2, ../sass/bootstrap/mixins/_clearfix.scss */
 .breadcrumb::after {
@@ -4857,19 +4690,11 @@ tbody.collapse.show {
   display: flex;
   padding-left: 0;
   list-style: none;
-  border-radius: 0.25rem;
 }
 
 /* line 11, ../sass/bootstrap/_pagination.scss */
 .page-item:first-child .page-link {
   margin-left: 0;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-/* line 17, ../sass/bootstrap/_pagination.scss */
-.page-item:last-child .page-link {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
 }
 /* line 22, ../sass/bootstrap/_pagination.scss */
 .page-item.active .page-link {
@@ -4910,31 +4735,11 @@ tbody.collapse.show {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
 }
-/* line 11, ../sass/bootstrap/mixins/_pagination.scss */
-.pagination-lg .page-item:first-child .page-link {
-  border-top-left-radius: 0.3rem;
-  border-bottom-left-radius: 0.3rem;
-}
-/* line 16, ../sass/bootstrap/mixins/_pagination.scss */
-.pagination-lg .page-item:last-child .page-link {
-  border-top-right-radius: 0.3rem;
-  border-bottom-right-radius: 0.3rem;
-}
 
 /* line 4, ../sass/bootstrap/mixins/_pagination.scss */
 .pagination-sm .page-link {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-}
-/* line 11, ../sass/bootstrap/mixins/_pagination.scss */
-.pagination-sm .page-item:first-child .page-link {
-  border-top-left-radius: 0.2rem;
-  border-bottom-left-radius: 0.2rem;
-}
-/* line 16, ../sass/bootstrap/mixins/_pagination.scss */
-.pagination-sm .page-item:last-child .page-link {
-  border-top-right-radius: 0.2rem;
-  border-bottom-right-radius: 0.2rem;
 }
 
 /* line 6, ../sass/bootstrap/_badge.scss */
@@ -4948,7 +4753,6 @@ tbody.collapse.show {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 0.25rem;
 }
 /* line 19, ../sass/bootstrap/_badge.scss */
 .badge:empty {
@@ -4971,7 +4775,6 @@ a.badge:focus, a.badge:hover {
 .badge-pill {
   padding-right: 0.6em;
   padding-left: 0.6em;
-  border-radius: 10rem;
 }
 
 /* line 54, ../sass/bootstrap/_badge.scss */
@@ -5033,7 +4836,6 @@ a.badge:focus, a.badge:hover {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #eceeef;
-  border-radius: 0.3rem;
 }
 @media (min-width: 576px) {
   /* line 1, ../sass/bootstrap/_jumbotron.scss */
@@ -5046,7 +4848,6 @@ a.badge:focus, a.badge:hover {
 .jumbotron-fluid {
   padding-right: 0;
   padding-left: 0;
-  border-radius: 0;
 }
 
 /* line 5, ../sass/bootstrap/_alert.scss */
@@ -5054,7 +4855,6 @@ a.badge:focus, a.badge:hover {
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
 }
 
 /* line 13, ../sass/bootstrap/_alert.scss */
@@ -5152,7 +4952,6 @@ a.badge:focus, a.badge:hover {
   line-height: 1rem;
   text-align: center;
   background-color: #eceeef;
-  border-radius: 0.25rem;
 }
 
 /* line 16, ../sass/bootstrap/_progress.scss */
@@ -5221,16 +5020,9 @@ a.badge:focus, a.badge:hover {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
-/* line 52, ../sass/bootstrap/_list-group.scss */
-.list-group-item:first-child {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-}
 /* line 56, ../sass/bootstrap/_list-group.scss */
 .list-group-item:last-child {
   margin-bottom: 0;
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
 }
 /* line 23, ../sass/bootstrap/mixins/_hover.scss */
 .list-group-item:focus, .list-group-item:hover {
@@ -5489,7 +5281,6 @@ button.close {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
   outline: 0;
 }
 
@@ -5669,7 +5460,6 @@ button.close {
   color: #fff;
   text-align: center;
   background-color: #000;
-  border-radius: 0.25rem;
 }
 /* line 83, ../sass/bootstrap/_tooltip.scss */
 .tooltip-inner::before {
@@ -5708,7 +5498,6 @@ button.close {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
 }
 /* line 24, ../sass/bootstrap/_popover.scss */
 .popover.popover-top, .popover.bs-tether-element-attached-bottom {
@@ -5814,8 +5603,6 @@ button.close {
   color: inherit;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
-  border-top-left-radius: calc(0.3rem - 1px);
-  border-top-right-radius: calc(0.3rem - 1px);
 }
 /* line 141, ../sass/bootstrap/_popover.scss */
 .popover-title:empty {
@@ -6141,35 +5928,6 @@ a.bg-inverse:focus, a.bg-inverse:hover {
 /* line 9, ../sass/bootstrap/utilities/_borders.scss */
 .border-left-0 {
   border-left: 0 !important;
-}
-
-/* line 15, ../sass/bootstrap/utilities/_borders.scss */
-.rounded {
-  border-radius: 0.25rem;
-}
-
-/* line 18, ../sass/bootstrap/utilities/_borders.scss */
-.rounded-top {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-}
-
-/* line 21, ../sass/bootstrap/utilities/_borders.scss */
-.rounded-right {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-}
-
-/* line 24, ../sass/bootstrap/utilities/_borders.scss */
-.rounded-bottom {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
-/* line 27, ../sass/bootstrap/utilities/_borders.scss */
-.rounded-left {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
 }
 
 /* line 31, ../sass/bootstrap/utilities/_borders.scss */

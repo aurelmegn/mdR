@@ -1,5 +1,5 @@
 assets/\.sass-cache/\*
 
 \.idea/
-
+node_modules/
 assets/\.sass-cache/

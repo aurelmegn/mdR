@@ -147,6 +147,66 @@ function getFolderDetails($path, $file){
     );
 }
 
+function sortFileList ($list){
+
+
+    foreach ($list as $file){
+
+        if ($file['type']== 'file'){
+
+            return true;
+
+        }
+
+        if ($file['type']== 'folder'){
+
+            return false;
+
+        }
+    }
+
+
+};
+
+
+$CurrentFolderFileType = array_filter($currentFolderFileDetails,function ($file){
+
+        if ($file['type']== 'file'){
+
+            return true;
+
+
+        }
+
+        if ($file['type']== 'folder'){
+
+            return false;
+
+        }
+
+
+},ARRAY_FILTER_USE_BOTH);
+
+
+$CurrentFolderFolderType = array_filter($currentFolderFileDetails,function ($file){
+
+    if ($file['type']== 'file'){
+
+        return false;
+
+
+    }
+
+    if ($file['type']== 'folder'){
+
+        return true;
+
+    }
+
+
+},ARRAY_FILTER_USE_BOTH);
+
+$currentFolderFileDetails = array_merge($CurrentFolderFolderType,$CurrentFolderFileType);
 
 $data['currentFolder'] = $currentFolderRealPath;
 

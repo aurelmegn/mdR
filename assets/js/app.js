@@ -1,6 +1,6 @@
-var app = angular.module('app',['ui.router','ngSanitize']);
+var app = angular.module('app',['ui.router','ngSanitize','hljs']);
 
-app.config(function($stateProvider,$urlRouterProvider)
+app.config(function($stateProvider,$urlRouterProvider,hljsServiceProvider)
 {
 
     $stateProvider
@@ -17,6 +17,13 @@ app.config(function($stateProvider,$urlRouterProvider)
 
 
     $urlRouterProvider.otherwise('/');
+
+    hljsServiceProvider.setOptions({
+        // replace tab with 4 spaces
+        tabReplace: '    ',
+
+        languages : ['html','css','php']
+    });
 
 
 

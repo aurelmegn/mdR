@@ -23,8 +23,8 @@
 
       height: 100%;
 
-      width: 30%;
-      border-right: 1px solid;
+      width: 35%;
+      //border-right: 1px solid;
 
       color: $defColour;
 
@@ -35,6 +35,30 @@
       .contentNavNav{
         overflow: auto;
         height: 89%;
+
+        .element{
+
+          cursor: pointer;
+
+          //height: 50px;
+          text-align: left;
+
+          @include transition(all $duration ease-in);
+
+          padding-left: 15px;
+
+          &:hover {
+
+
+            background-color: lighten($defColour,10);
+
+            color:white;
+
+            @include translateX(5px);
+
+          }
+
+        }
       }
 
       .btn-back{
@@ -50,16 +74,42 @@
     }
 
     .contentOutput{
-      //height: 70%;
 
-      overflow-y: auto;
+      overflow-x: hidden !important;
 
       height: 100%;
 
-      width: 70%;
+      width: 65%;
 
       text-wrap: normal;
 
+    }
+
+    .contentNavLoader{
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      background: lighten($defColour,45);
+
+      border-radius: 4px;
+
+      opacity: 0.6;
+
+      z-index: 20;
+
+      color: black;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      @include transition(background 0.3s );
     }
 
   }

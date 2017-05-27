@@ -1,4 +1,4 @@
-app.controller("mainController",["$scope","$log","mainFactory",function ($scope,$log,mainFactory) {
+app.controller("mainController",["$rootScope","$scope","$log","mainFactory",function ($rootScope,$scope,$log,mainFactory) {
 
     (function () {
 
@@ -18,9 +18,14 @@ app.controller("mainController",["$scope","$log","mainFactory",function ($scope,
 
     $scope.changeContent = function (abspath,extension) {
 
+        $rootScope.loader = true;
+
         mainFactory.loadContent(abspath,extension).then(contentLoadingSuccess,function (error) {
 
             $log.error(error)
+
+            $rootScope.loader = false;
+
         });
 
         $scope.contentType = extension;
@@ -29,8 +34,12 @@ app.controller("mainController",["$scope","$log","mainFactory",function ($scope,
 
 
     function go (path) {
+
+        $rootScope.loader = true;
+
          mainFactory.getList(path).then(getFileListSuccess,getFileListFail)
      }
+
 
     function getFileListSuccess(data) {
 
@@ -38,11 +47,17 @@ app.controller("mainController",["$scope","$log","mainFactory",function ($scope,
 
         $scope.currentFolder = data.currentFolder;
 
+        $rootScope.loader = false;
+
+
     }
 
     function getFileListFail(error) {
 
         $log.error(error);
+
+        $rootScope.loader = false;
+
 
     }
 
@@ -50,7 +65,10 @@ app.controller("mainController",["$scope","$log","mainFactory",function ($scope,
 
         $scope.viewcontent = data;
 
-        $log.info(data)
+        $rootScope.loader = false;
+
+
+        // $log.info(data)
 
     }
 

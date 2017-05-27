@@ -20,78 +20,77 @@
 
     <div class="content container-fluid col-md-12">
 
-        <!--<div class="row">-->
+        <div class="contentNavLoader" ng-show="loader"> <i class="fa fa-cog fa-spin fa-5x"></i> </div>
 
-            <div class="contentNav col-md-6">
+        <div class="contentNav col-md-6">
 
-                <!--{{filelist}}-->
 
-                <div class="contentNavNav">
+            <!--{{filelist}}-->
 
-                    <div class="col-md-12" ng-repeat="file in filelist">
+            <div class="contentNavNav">
 
-                        <div ng-if="file.type == 'folder'">
+                <div class="col-md-12" ng-repeat="file in filelist">
 
-                            <div class="col-md-12 h4 p-0" ng-click="goToPath(file.abspath)">
+                    <div ng-if="file.type == 'folder'">
 
-                                <i class="fa fa-1x fa-folder"></i> {{file.dirname}}
+                        <div class="col-md-12 h4 p-0 element" ng-click="goToPath(file.abspath)">
+
+                            <span>
+                                <img src="assets/svg/folder.svg" alt="" width="50px"> {{file.dirname}}
+                            </span>
+
+                        </div>
+<!--                            <div class="col-md-10 offset-md-2" ng-repeat="content in file.dircontents">
+
+                            &lt;!&ndash;{{content}}&ndash;&gt;
+
+                            <div ng-if="content.type == 'folder'">
+
+                                <i class="fa fa-1x fa-folder-o"></i> {{content.name}}
 
                             </div>
 
-                            <!--<div class="col-md-10 offset-md-2" ng-repeat="content in file.dircontents">
+                            <div ng-if="content.type == 'file'" ng-click="changeContent(content.abspath)">
 
-                                &lt;!&ndash;{{content}}&ndash;&gt;
+                                <i class="fa fa-1x fa-file-o"></i> {{content.name}}
 
-                                <div ng-if="content.type == 'folder'">
+                            </div>
 
-                                    <i class="fa fa-1x fa-folder-o"></i> {{content.name}}
-
-                                </div>
-
-                                <div ng-if="content.type == 'file'" ng-click="changeContent(content.abspath)">
-
-                                    <i class="fa fa-1x fa-file-o"></i> {{content.name}}
-
-                                </div>
-
-                            </div>-->
-
-                        </div>
-
-                        <div ng-if="file.type == 'file'" ng-click="changeContent(file.abspath,file.extension)" class="h4">
-
-
-                            <span><i class="fa fa-1x fa-file-o"></i> {{file.basename}}</span>
-
-                        </div>
-
-                        <hr>
-
+                        </div>-->
 
                     </div>
+
+                    <div ng-if="file.type == 'file'" ng-click="changeContent(file.abspath,file.extension)" class="h4 element">
+
+
+                        <span>
+                            <img src="assets/svg/{{file.extension}}.svg" alt="" width="50px"> {{file.basename}}
+                        </span>
+
+                    </div>
+
+                    <hr>
 
 
                 </div>
 
 
-                <button class="btn btn-back btn-secondary" ng-click="goToPath(currentFolder+'/..')">
-                    ..
-                </button>
-
             </div>
+
+
+            <button class="btn btn-back btn-secondary" ng-click="goToPath(currentFolder+'/..')">
+                ..
+            </button>
+
+        </div>
 
             <div class="contentOutput col-md-6 " >
 
-                <pre ng-show="contentType != 'md'">
-
-                    <code >{{viewcontent }}</code>
-
-
-                </pre>
+                <div ng-show="contentType != 'md'" hljs hljs-source="viewcontent"></div>
 
                 <pre ng-show="contentType == 'md'">
 
-                    <code ng-bind-html="viewcontent"></code>
+                <code ng-bind-html="viewcontent"></code>
 
                 </pre>
 

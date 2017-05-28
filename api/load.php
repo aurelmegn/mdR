@@ -1,5 +1,8 @@
 <?php
 use \Michelf\Markdown;
+$start = microtime(true);
+
+$data = [];
 
 if (isset($_POST['load'])){
 
@@ -14,6 +17,13 @@ if (isset($_POST['load'])){
         $output = Markdown::defaultTransform($output);
     }
 
-    echo $output;
+$data['content'] = $output;
+
+$time_elapsed_secs = microtime(true) - $start;
+
+$data['buildtime'] = round($time_elapsed_secs,3,PHP_ROUND_HALF_UP);
+
+
+echo json_encode($data);
 
 }

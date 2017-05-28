@@ -1,4 +1,6 @@
 <?php
+$start = microtime(true);
+
 
 header("Content-Type: application/json");
 
@@ -147,28 +149,6 @@ function getFolderDetails($path, $file){
     );
 }
 
-function sortFileList ($list){
-
-
-    foreach ($list as $file){
-
-        if ($file['type']== 'file'){
-
-            return true;
-
-        }
-
-        if ($file['type']== 'folder'){
-
-            return false;
-
-        }
-    }
-
-
-};
-
-
 $CurrentFolderFileType = array_filter($currentFolderFileDetails,function ($file){
 
         if ($file['type']== 'file'){
@@ -211,5 +191,9 @@ $currentFolderFileDetails = array_merge($CurrentFolderFolderType,$CurrentFolderF
 $data['currentFolder'] = $currentFolderRealPath;
 
 $data['folders'] = $currentFolderFileDetails;
+
+$time_elapsed_secs = microtime(true) - $start;
+
+$data['buildtime'] = round($time_elapsed_secs,2,PHP_ROUND_HALF_UP);
 
 echo json_encode($data);

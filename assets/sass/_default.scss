@@ -1,6 +1,14 @@
 .main{
 
+  .logoIimg{
+
+    width: 100px;
+
+    height: 50px;
+  }
+
   .content{
+
     position: absolute;
     bottom: 0;
     left:0;
@@ -15,8 +23,6 @@
     justify-content: space-between;
     flex-direction: row;
 
-    //border: 1px solid;
-
     padding: 10px;
 
     .contentNav{
@@ -24,7 +30,6 @@
       height: 100%;
 
       width: 35%;
-      //border-right: 1px solid;
 
       color: $defColour;
 
@@ -40,7 +45,6 @@
 
           cursor: pointer;
 
-          //height: 50px;
           text-align: left;
 
           @include transition(all $duration ease-in);
@@ -83,6 +87,23 @@
 
       text-wrap: normal;
 
+      .nothingToShow{
+
+        height: 100%;
+
+        background: lighten($defColour,40);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        span{
+          display: block;
+          font-size: 20pt;
+        }
+      }
+
     }
 
     .contentNavLoader{
@@ -110,6 +131,32 @@
       align-items: center;
 
       @include transition(background 0.3s );
+    }
+
+    .debugTools{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: lighten($defColour,45);
+
+
+      @include transition(all $duration);
+
+      &:hover{
+        background-color: $defColour;
+
+        &>a.btn{
+
+          color: white;
+
+        }
+      }
+
+      &>a.btn{
+
+        color: black;
+
+      }
     }
 
   }

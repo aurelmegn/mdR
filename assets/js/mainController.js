@@ -6,7 +6,7 @@ app.controller("mainController",["$rootScope","$scope","$log","mainFactory",func
 
     })();
 
-    $scope.viewcontent = " Nothing to show";
+    $scope.viewcontent = null;
     // $scope.viewcontent = " # Heading 1\n- [Link](http://example.com)\n- [Custom Link 1](herp://is.this.working?)\n- [Custom Link 2](derp://is.this.working?)";
 
     $scope.filelist = {};
@@ -47,6 +47,8 @@ app.controller("mainController",["$rootScope","$scope","$log","mainFactory",func
 
         $scope.currentFolder = data.currentFolder;
 
+        $scope.buildtime = data.buildtime;
+
         $rootScope.loader = false;
 
 
@@ -63,12 +65,12 @@ app.controller("mainController",["$rootScope","$scope","$log","mainFactory",func
 
     function contentLoadingSuccess(data) {
 
-        $scope.viewcontent = data;
+        $scope.viewcontent = data.content;
+
+        $scope.loadTime = data.buildtime;
 
         $rootScope.loader = false;
 
-
-        // $log.info(data)
 
     }
 

@@ -3,7 +3,7 @@
 mdR is a file explorer write with angularjs and php. 
 It also allow to preview files with entensions like md ,html, js,css, sass
 
-This project has been inspired from [exploweb]()
+This project has been inspired from [exploweb by Quetin]()
 
 ### Usage
 

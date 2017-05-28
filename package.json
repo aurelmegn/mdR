@@ -1,5 +1,5 @@
 {
-  "name": "phpxplorer",
+  "name": "mdR",
   "version": "1.0.0",
   "description": "An file explorer web app write in php and angularjs",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shiftSh/phpXplorer.git"
+    "url": "git+https://github.com/shiftSh/mdR.git"
   },
   "keywords": [
     "explore",
@@ -18,9 +18,9 @@
   "author": "shiftSh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shiftSh/phpXplorer/issues"
+    "url": "https://github.com/shiftSh/mdR/issues"
   
-  "homepage": "https://github.com/shiftSh/phpXplorer#readme",
+  "homepage": "https://github.com/shiftSh/mdR#readme",
   "dependencies": {
     "highlightjs":"8.9.1",
     "angularjs": "^0.0.1",

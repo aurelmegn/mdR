@@ -10,19 +10,79 @@ var gulp = require('gulp'),
     stripcomments = require('gulp-strip-comments');
 
 
+const htmlFilter = filter(['*.html','partials*/.*'], {restore: true});
+
 gulp.task('dist',function () {
 
-    const jsFilter = filter('assets/js/*.js', {restore: true});
-    const sassFilter = filter('assets/sass/*.scss', {restore: true});
-
-    return gulp.src('**/*.html')
+    return gulp.src(['index.html','p*/*'])
 
         .pipe(useref())
-        .pipe(stripcomments())
 
-        .pipe(jsFilter)
-        // .pipe(minJs())
-        .pipe(jsFilter.restore)
+        .pipe(htmlFilter)
+
+         .pipe(stripcomments())
+
+        .pipe(htmlFilter.restore)
 
         .pipe(gulp.dest('dist'));
+});
+
+gulp.task('moveSvg',function () {
+
+    return gulp.src(['assets*/svg*/*'])
+
+        .pipe(gulp.dest('dist/'))
+});
+
+gulp.task('moveImg',function () {
+
+    return gulp.src(['assets*/img*/*'])
+
+        .pipe(gulp.dest('dist/'))
+});
+
+gulp.task('movePhp',function () {
+
+    return gulp.src(['api*/*'])
+
+        .pipe(gulp.dest('dist/'))
+});
+
+gulp.task('moveFonts',function () {
+
+    return gulp.src(['assets*/fonts*/*'])
+
+        .pipe(gulp.dest('dist/'))
+});
+
+gulp.task('minifyLocaleJs',function () {
+
+    return gulp.src(['assets*/*/*.js'])
+
+        .pipe(minJs())
+        .pipe(gulp.dest('dist/'))
+});
+gulp.task('minifyAngularHighlightJs',function () {
+
+    return gulp.src(['node_*/angular-*/*.js'])
+
+        .pipe(minJs())
+        .pipe(gulp.dest('dist/'))
+});
+gulp.task('minifyHighlightJs',function () {
+
+    return gulp.src(['node_*/hig*/*.js'])
+
+        .pipe(minJs())
+        .pipe(gulp.dest('dist/'))
+});
+
+
+
+gulp.task('default',['moveImg','moveSvg','moveFonts','movePhp','minifyLocaleJs','minifyAngularHighlightJs','minifyHighlightJs','dist'],function () {
+
+
+ console.log('\n \n \n \n \t\t DIST DIRECTORY CREATE WITH SUCCESS :) \n\n \n \n \n ');
+
+
 });

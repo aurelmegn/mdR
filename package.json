@@ -18,21 +18,24 @@
   "author": "shiftSh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shiftSh/mdR/issues"
-  
-  "homepage": "https://github.com/shiftSh/mdR#readme",
-  "dependencies": {
-    "highlightjs":"8.9.1",
-    "angularjs": "^0.0.1",
-    "angular-highlightjs": "^0.7.1"
+    "url": "https://github.com/shiftSh/mdR/issues",
+    "homepage": "https://github.com/shiftSh/mdR#readme",
+    "dependencies": {
+      "highlightjs": "8.9.1",
+      "angularjs": "^0.0.1",
+      "angular-highlightjs": "^0.7.1"
+    },
+    "devDependencies": {
+      "gulp": "^3.9.1",
+      "gulp-htmlclean": "^2.7.14",
+      "gulp-spa": "^0.2.2",
+      "gulp-strip-comments": "^2.4.5",
+      "gulp-uglify": "^3.0.0",
+      "gulp-filter": "",
+      "gulp-useref": "^3.1.2"
+    }
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-htmlclean": "^2.7.14",
-    "gulp-spa": "^0.2.2",
-    "gulp-strip-comments": "^2.4.5",
-    "gulp-uglify": "^3.0.0",
-    "gulp-filter":"",
-    "gulp-useref": "^3.1.2"
+    "gulp-zip": "^4.0.0"
   }
 }

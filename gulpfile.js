@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     spa = require('gulp-spa'),
     useref = require('gulp-useref'),
     filter = require('gulp-filter'),
+    zip = require('gulp-zip'),
     stripcomments = require('gulp-strip-comments');
 
 
@@ -77,9 +78,18 @@ gulp.task('minifyHighlightJs',function () {
         .pipe(gulp.dest('dist/'))
 });
 
+gulp.task('zipDist',['moveImg','moveSvg','moveFonts','movePhp','minifyLocaleJs','minifyAngularHighlightJs','minifyHighlightJs','dist'],function () {
+
+    return gulp.src(['dist/**'])
+
+        .pipe(zip('mdR.zip'))
+
+        .pipe(gulp.dest('./'))
+});
 
 
-gulp.task('default',['moveImg','moveSvg','moveFonts','movePhp','minifyLocaleJs','minifyAngularHighlightJs','minifyHighlightJs','dist'],function () {
+
+gulp.task('default',['zipDist'],function () {
 
 
  console.log('\n \n \n \n \t\t DIST DIRECTORY CREATE WITH SUCCESS :) \n\n \n \n \n ');

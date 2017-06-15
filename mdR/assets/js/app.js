@@ -1,0 +1,1 @@
+var app=angular.module("app",["ui.router","ngSanitize","hljs"]);app.config(["$stateProvider","$urlRouterProvider",function(r,a){r.state(name="main",{url:"/",controller:"mainController",templateUrl:"partials/main.html"}),a.otherwise("/")}]);

@@ -108,11 +108,11 @@
 
                     <div ng-show="contentType != 'md'" hljs hljs-source="viewcontent"></div>
 
-                    <pre ng-show="contentType == 'md'">
+                    <div ng-show="contentType == 'md'">
 
-                    <code ng-bind-html="viewcontent"></code>
+                    <div ng-bind-html="viewcontent"></div>
 
-                    </pre>
+                    </div>
 
                 </span>
 

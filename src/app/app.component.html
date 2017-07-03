@@ -1,20 +1,118 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="main">
 
+  <nav class="navbar navbar-light bg-faded fixed-top justify-content-between">
+
+    <a class="navbar-brand col-2">
+
+      <img src="assets/svg/mdr.svg" class="logoIimg" alt="">
+
+    </a>
+
+    <form class="form-inline col-8" novalidate (submit)="goToPath(path.value)">
+
+      <div class="col-10">
+
+        <input class="form-control w-100" [value]="currentFolder" type="text" placeholder="Enter a path">
+
+      </div>
+
+      <button class="btn  btn-outline-secondary col-md-2" type="submit">Go</button>
+
+    </form>
+
+  </nav>
+
+  <div class="content container-fluid col-md-12">
+
+    <div class="contentNavLoader" *ngIf="loader"> <i class="fa fa-cog fa-spin fa-5x"></i> </div>
+
+    <div class="contentNav col-md-6">
+
+
+      <!--{{filelist}}-->
+
+      <div class="contentNavNav">
+
+        <div class="col-md-12" *ngFor="let file of filelist">
+
+          <div *ngIf="file.type == 'folder'">
+
+            <div class="col-md-12 h4 p-0 element" (click)="goToPath(file.abspath)">
+
+                            <span>
+                                <img src="assets/svg/folder.svg" alt="" width="50px"> {{file.dirname}}
+                            </span>
+
+            </div>
+
+          </div>
+
+          <div *ngIf="file.type == 'file'" (click)="changeContent(file.abspath,file.extension)" class="h4 element">
+
+
+                        <span *ngIf="file.extension == null">
+
+                            <img src="assets/svg/default.svg" alt="" width="50px"> {{file.basename}}
+
+                        </span>
+
+            <span *ngIf="file.extension != null">
+
+                            <img src="assets/svg/{{file.extension}}.svg" alt="" width="50px"> {{file.basename}}
+
+                        </span>
+
+          </div>
+
+          <hr>
+
+
+        </div>
+
+
+      </div>
+
+
+      <button class="btn btn-back btn-secondary" (click)="goToPath(currentFolder+'/..')">
+        ..
+      </button>
+
+    </div>
+
+    <div class="contentOutput col-md-6 " >
+
+        <div *ngIf="viewcontent != null">
+
+            <div *ngIf="contentType != 'md'"></div>
+
+            <div *ngIf="contentType == 'md'">
+
+            </div>
+
+            <div class="highlight">{{viewcontent}}</div>
+
+        </div>
+
+      <div class="nothingToShow" *ngIf="viewcontent === null">
+
+            <span>
+
+                Nothing to show
+
+            </span>
+
+      </div>
+
+    </div>
+
+    <div class="debugTools">
+
+      <a href="" class="btn"> Liste time : {{buildtime}} s </a>
+
+      <a href="" class="btn"> Content Load Time : {{loadTime}} s </a>
+
+    </div>
+
+  </div>
+
+</div>

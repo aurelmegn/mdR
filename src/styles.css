@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/css/font-awesome.min.css";
+@import "assets/css/bootstrap.css";
+@import "assets/css/index.css";
+
+@import "../node_modules/highlightjs/styles/github.css";
+

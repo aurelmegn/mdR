@@ -1,28 +1,33 @@
-# MdrUpgraded
+# mdR 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
+**mdR** (for **m**ark**d**own **R**eader) is a web file explorer write with **[angular 4](http://www.angular.io)** and **[php 7](http://www.php.net)**. 
+It actually provide a view of files with extensions like md, php,js,css, sass **[...]**.
 
-## Development server
+This project has been inspired from [exploweb by quetin77](https://github.com/quenti77/exploweb).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Usage
+- You can use your preferred web server (which has php7) or use a simple php server
+- Download the source code or the distributed version [mdR.zip](./../mdR.zip) according to your usage
+- Decompress the archive and open a terminal in the created folder
 
-## Code scaffolding
+```shell
+$ cd mdR
+$ php -S localhost:3000 
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+Browse the [localhost:3000](http://localhost:3000) in your browser.
 
-## Build
+### Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+![Preview 1](./src/assets/img/p-2.png)
 
-## Running unit tests
+### Development
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### TODO
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- **Implement**:
+    - cli tools for quickly access from any folder
+    - audio file reading
+    - image gallery
+    - video reading
+    - search

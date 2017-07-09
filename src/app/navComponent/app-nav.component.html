@@ -1,0 +1,21 @@
+  <nav class="navbar navbar-light bg-faded fixed-top justify-content-between">
+
+    <a class="navbar-brand col-2">
+
+      <img src="assets/svg/mdr.svg" class="logoIimg" alt="">
+
+    </a>
+
+    <form class="form-inline col-8" novalidate (submit)="goToPath(current.value)">
+
+      <div class="col-10">
+
+        <input class="form-control w-100" #current [value]="currentFolder" type="text" placeholder="Enter a path">
+
+      </div>
+
+      <button class="btn  btn-outline-secondary col-md-2" type="submit">Go</button>
+
+    </form>
+
+  </nav>

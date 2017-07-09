@@ -1,5 +1,5 @@
 
 export const ApiUrl = {
-    listUrl : 'http://localhost:4000',
-    contentUrl : 'http://localhost:4000/load.php',
+    listUrl : 'http://localhost:3000/api/',
+    contentUrl : 'http://localhost:3000/api/load.php',
 };

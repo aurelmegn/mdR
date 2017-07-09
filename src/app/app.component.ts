@@ -55,9 +55,7 @@ export class AppComponent implements OnInit, OnDestroy {
      * list of extensions supported by mdR
      * @type {[string,string,string,string,string,string]}
      */
-    supportedExtensions = [
-      'md', 'svg', 'png', 'jpg', 'js', 'css', 'php', 'json'
-  ];
+    supportedExtensions = [ 'md', 'svg', 'png', 'jpg', 'js', 'css', 'php', 'json' ];
 
     /**
      * the constructor of AppComponent
@@ -80,7 +78,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * function used to know if the a file extension is suppored by mdR
+     * function used to know if the a file extension is supported by mdR
      * @param ext
      * @returns {any}
      */

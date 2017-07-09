@@ -3,7 +3,7 @@
 **mdR** (for **m**ark**d**own **R**eader) is a web file explorer write with **[angular 4](http://www.angular.io)** and **[php 7](http://www.php.net)**. 
 It actually provide a view of files with extensions like md, php,js,css, sass **[...]**.
 
-This project has been inspired from [exploweb by quetin77](https://github.com/quenti77/exploweb).
+This project has been inspired from [exploweb by quenti77](https://github.com/quenti77/exploweb).
 
 ### Usage
 - You can use your preferred web server (which has php7) or use a simple php server

@@ -93,13 +93,13 @@ export class AppComponent implements OnInit, OnDestroy {
     go(path): void {
 
         this.loader = true;
-
+        
         this.subscription.add(
             this.appService.getList(path).subscribe(
                 data => {
                   this.fileList = data.folders;
                   this.currentFolder = data.currentFolder;
-                  this.buildTime = data.buildTime;
+                  this.buildTime = data.buildtime;
                   this.loader = false;
                 },
                 error => {
@@ -118,10 +118,10 @@ export class AppComponent implements OnInit, OnDestroy {
       this.go({folder : path})
     }
 
-  changeContent(abspath, extension) {
+  changeContent(event) {
 
-    const data: Object = { load : abspath, extension : extension};
-    this.contentType = extension;
+    const data: Object = { load : event.abspath, extension : event.extension};
+    this.contentType = event.extension;
     this.loader = true;
 
     this.subscription.add(
@@ -129,7 +129,7 @@ export class AppComponent implements OnInit, OnDestroy {
         res => {
 
           this.fileContent = res.content;
-          this.loadTime = res.buildTime;
+          this.loadTime = res.buildtime;
           this.htmlElementViewContent = `<pre class="highlight">` + this.fileContent + ` </pre>`;
           this.loader = false;
           console.log(res)

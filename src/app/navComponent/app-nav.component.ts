@@ -10,10 +10,9 @@ export class NavComponent {
     @Output() OnPathChange = new EventEmitter<any>();
     @Input() currentFolder: string;
 
-    goToPath (path): boolean {
+    goToPath (path) {
 
         this.OnPathChange.emit(path);
-        return false;
     }
     constructor() { }
 }

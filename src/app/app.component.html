@@ -6,79 +6,19 @@
 
     <div class="contentNavLoader" *ngIf="loader"> <i class="fa fa-cog fa-spin fa-5x"></i> </div>
 
-    <div class="contentNav col-md-6">
-
-      <div class="contentNavNav">
-
-          <div class="col-md-12" *ngIf="fileList.length === 0">
-
-              No file
-
-          </div>
-
-          <ng-container *ngIf="fileList.length !== 0">
-              <div class="col-md-12" *ngFor="let file of fileList">
-
-                  <div *ngIf="file.type == 'folder'">
-
-                      <div class="col-md-12 h4 p-0 element" (click)="goToPath(file.abspath)">
-
-                        <span>
-                            <img src="assets/svg/folder.svg" alt="" width="50px"> {{file.dirname | CutFileName }}
-                        </span>
-
-                      </div>
-
-                  </div>
-
-                  <div *ngIf="file.type === 'file' && isSupported(file.extension)" (click)="changeContent(file.abspath,file.extension)" class="h4 element">
-
-                    <span *ngIf="file.extension == null">
-
-                        <img src="assets/svg/default.svg" alt="" width="50px"> {{file.basename | CutFileName }}
-
-                    </span>
-
-                      <span *ngIf="file.extension != null">
-
-                <img src="assets/svg/{{file.extension}}.svg" alt="" width="50px" > {{file.basename | CutFileName }}
-
-            </span>
-
-                      <hr>
-
-                  </div>
-
-
-
-              </div>
-          </ng-container>
-
-      </div>
-
-      <button class="btn btn-back btn-secondary" (click)="goToPath(currentFolder+'/..')">
-        ..
-      </button>
-
-    </div>
+    <app-sidenav class="contentNav col-md-6" [currentFolder]="currentFolder" [fileList]="fileList" (OnPathChange)="goToPath($event)" (OnChangeContent)="changeContent($event)"></app-sidenav>
 
     <div class="contentOutput col-md-6 " >
 
-        <div *ngIf="fileContent != null">
+        <div *ngIf="fileContent !== null">
 
-            <div *ngIf="contentType != 'md'">
-
-                <div [innerHtml]="htmlElementViewContent" highlight-js-content=".highlight" class="highlightdiv">
-
-                </div>
-
-            </div>
-
-            <div *ngIf="contentType === 'md'">
-                <markdown [data]="fileContent"></markdown>
-            </div>
+            <app-text *ngIf="isTextFile(contentType)" ></app-text>
+            
+            <!--<app-audio *ngIf="isAudioFile(contentType)"></app-audio>
+            <app-image *ngIf="isImageFile(contentType)"></app-image>-->
 
         </div>
+
 
       <div class="nothingToShow" *ngIf="fileContent === null">
 
@@ -92,13 +32,7 @@
 
     </div>
 
-    <div class="debugTools">
-
-      <a href="" class="btn"> Liste time : {{buildTime}} s </a>
-
-      <a href="" class="btn"> Content Load Time : {{loadTime}} s </a>
-
-    </div>
+    <app-debug class="debugTools" [loadTime]="loadTime" [buildTime]="buildTime"></app-debug>
 
   </div>
 

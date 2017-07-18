@@ -10,6 +10,9 @@ import {NavComponent} from './navComponent/app-nav.component';
 import {CutFileNamePipe} from './pipe/fileNamePipe';
 import { SideNavComponent } from './sideNavComponent/side-nav.component';
 import { TextComponent } from './TextFileComponent/text.component';
+import {AudioComponent} from './AudioFileComponent/audio.component';
+import {FormsModule} from '@angular/forms';
+import {NgbModule, NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { TextComponent } from './TextFileComponent/text.component';
     CutFileNamePipe,
     SideNavComponent,
     DebugComponent,
-    TextComponent
+    TextComponent,
+      AudioComponent,
+      NgbModule,
+      NgbTypeaheadModule
   ],
   imports: [
     BrowserModule,
@@ -26,6 +32,7 @@ import { TextComponent } from './TextFileComponent/text.component';
     JsonpModule,
     HighlightJsModule,
     MarkdownModule.forRoot(),
+      FormsModule
   ],
   providers: [AppService, HighlightJsService],
   bootstrap: [AppComponent]

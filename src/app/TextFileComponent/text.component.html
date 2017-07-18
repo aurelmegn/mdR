@@ -1,0 +1,7 @@
+<div *ngIf="contentType !== 'md'">
+    <div [innerHtml]="htmlElementViewContent" highlight-js-content=".highlight" class="highlightdiv"> </div>
+</div>
+
+<div *ngIf="contentType === 'md'">
+    <markdown [data]="fileContent"></markdown>
+</div>

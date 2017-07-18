@@ -6,16 +6,16 @@
 
     <div class="contentNavLoader" *ngIf="loader"> <i class="fa fa-cog fa-spin fa-5x"></i> </div>
 
-    <app-sidenav class="contentNav col-md-6" [currentFolder]="currentFolder" [fileList]="fileList" (OnPathChange)="goToPath($event)" (OnChangeContent)="changeContent($event)"></app-sidenav>
+    <app-sidenav class="contentNav col-md-6" [supportedExtension]="supportedExtensions" [currentFolder]="currentFolder" [fileList]="fileList" (OnPathChange)="goToPath($event)" (OnChangeContent)="changeContent($event)"></app-sidenav>
 
     <div class="contentOutput col-md-6 " >
 
         <div *ngIf="fileContent !== null">
 
-            <app-text *ngIf="isTextFile(contentType)" ></app-text>
+            <app-text *ngIf="isTextFile(contentType)" [fileContent]="fileContent" [htmlElementViewContent]="htmlElementViewContent" [contentType]="contentType" ></app-text>
             
-            <!--<app-audio *ngIf="isAudioFile(contentType)"></app-audio>
-            <app-image *ngIf="isImageFile(contentType)"></app-image>-->
+            <app-audio *ngIf="isAudioFile(contentType)" [fileAbsPath]="fileAbsPath"></app-audio>
+            <!--<app-image *ngIf="isImageFile(contentType)"></app-image>-->
 
         </div>
 

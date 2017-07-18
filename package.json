@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.28",
     "@types/highlight.js": "^9.1.9",
     "angular2-highlight-js": "^5.0.1",
     "angular2-markdown": "^1.6.0",

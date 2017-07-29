@@ -1,51 +1,27 @@
 <div class="contentNavNav">
 
-    <div class="col-md-12" *ngIf="fileList.length === 0">
-
-        No file
-
-    </div>
+    <div class="col-md-12" *ngIf="fileList.length === 0"> No file </div>
 
     <ng-container *ngIf="fileList.length !== 0">
-        
         <div class="col-md-12" *ngFor="let file of fileList">
-
             <div *ngIf="file.type === 'folder'">
-
                 <div class="col-md-12 h4 p-0 element" (click)="goToPath(file.abspath)">
-
                 <span>
                     <img src="assets/svg/folder.svg" alt="" width="50px"> {{file.dirname | CutFileName }}
                 </span>
-
                 </div>
-
             </div>
 
             <div *ngIf="file.type === 'file' && isSupported(file.extension)" (click)="changeContent(file.abspath,file.extension)" class="h4 element">
-
             <span *ngIf="file.extension == null">
-
                 <img src="assets/svg/default.svg" alt="" width="50px"> {{file.basename | CutFileName }}
-
             </span>
-
-                <span *ngIf="file.extension != null">
-
-        
-            <img src="assets/svg/{{file.extension}}.svg" alt="" width="50px" > {{file.basename | CutFileName }}
-
+            <span *ngIf="file.extension != null">
+                <img src="assets/svg/{{file.extension}}.svg" alt="" width="50px" > {{file.basename | CutFileName }}
             </span>
-
                 <hr>
-
             </div>
-
         </div>
     </ng-container>
-
 </div>
-
-<button class="btn btn-back btn-secondary" (click)="goToPath(currentFolder+'/..')">
-..
-</button>
+<button class="btn btn-back btn-secondary" (click)="goToPath(currentFolder+'/..')">..</button>

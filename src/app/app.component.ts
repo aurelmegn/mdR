@@ -1,6 +1,8 @@
+import { BehaviorSubject, Subject } from 'rxjs/Rx';
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { AppService } from './app.service';
 import {Subscription} from 'rxjs/Subscription';
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-root',
@@ -53,6 +55,7 @@ export class AppComponent implements OnInit, OnDestroy {
      * @type {Subscription}
      */
     subscription = new Subscription();
+    fileRelativePath = new Subject();
     fileAbsPath: string = null;
     /**
      * list of extensions supported by mdR
@@ -129,15 +132,32 @@ export class AppComponent implements OnInit, OnDestroy {
      */
     changeContent(event) {
         this.contentType = event.extension;
-        if (this.isAudioFile(event.extension)) {
+/*        if (this.isAudioFile(event.extension)) {
             this.fileContent = ' ';
             this.fileAbsPath = event.abspath;
+            console.log('isaudio file')
             return
-        }
+        }*/
         if (!this.isTextFile(event.extension)) {
+            console.log('isaudio file')
+            this.fileContent = '';
+            this.fileAbsPath = event.abspath;
+            const data = {absolutePath: event.abspath};
+            this.subscription.add(
+                this.appService.getRelativePath(data).subscribe(
+                    res => {
+                        this.fileRelativePath.next(res);
+                        console.log(res)
+                    },
+                    error => {
+                        console.log(error);
+                        this.loader = false;
+                    }
+                )
+            );
             return
         }
-        const data: Object = { load : event.abspath, extension : event.extension};
+    const data: Object = { load : event.abspath, extension : event.extension};
     this.loader = true;
 
     this.subscription.add(

@@ -22,9 +22,7 @@ import {NgbModule, NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
     SideNavComponent,
     DebugComponent,
     TextComponent,
-      AudioComponent,
-      NgbModule,
-      NgbTypeaheadModule
+    AudioComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +30,7 @@ import {NgbModule, NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
     JsonpModule,
     HighlightJsModule,
     MarkdownModule.forRoot(),
-      FormsModule
+    FormsModule
   ],
   providers: [AppService, HighlightJsService],
   bootstrap: [AppComponent]

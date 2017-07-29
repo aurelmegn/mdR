@@ -14,7 +14,7 @@
 
             <app-text *ngIf="isTextFile(contentType)" [fileContent]="fileContent" [htmlElementViewContent]="htmlElementViewContent" [contentType]="contentType" ></app-text>
             
-            <app-audio *ngIf="isAudioFile(contentType)" [fileAbsPath]="fileAbsPath"></app-audio>
+            <app-audio *ngIf="isAudioFile(contentType)" [fileAbsPath]="fileAbsPath" [fileRelativePath]="fileRelativePath"></app-audio>
             <!--<app-image *ngIf="isImageFile(contentType)"></app-image>-->
 
         </div>

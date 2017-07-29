@@ -13,17 +13,13 @@ export class AppService {
 
     constructor(private http: Http) {}
 
-    private serialize (obj){
-
-        var str = [];
-
-        for(var p in obj)
+    private serialize (obj) {
+        let str = [];
+        for (const p in obj)
             if (obj.hasOwnProperty(p)) {
-            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+            str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
         }
-        
-        return str.join("&");
-
+        return str.join('&');
     }
 
     getList(data): Observable<any> {
@@ -31,6 +27,13 @@ export class AppService {
         data = this.serialize(data);
 
         return this.http.post(ApiUrl.listUrl, data, this.options)
+            .map(this.extractData)
+            .catch(this.handleError)
+    }
+
+    getRelativePath(data): Observable<any> {
+        data = this.serialize(data);
+        return this.http.post(ApiUrl.relativePathUrl, data, this.options)
             .map(this.extractData)
             .catch(this.handleError)
     }

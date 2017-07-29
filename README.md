@@ -27,7 +27,4 @@ Browse the [localhost:3000](http://localhost:3000) in your browser.
 
 - **Implement**:
     - cli tools for quickly access from any folder
-    - audio file reading
-    - image gallery
-    - video reading
     - search

@@ -1,6 +1,6 @@
 <div class="main">
 
-    <app-nav [currentFolder]="currentFolder" (OnPathChange)="goToPath($event)"></app-nav>
+  <app-nav [currentFolder]="currentFolder" (OnPathChange)="goToPath($event)"></app-nav>
 
   <div class="content container-fluid col-md-12">
 
@@ -13,12 +13,8 @@
         <div *ngIf="fileContent !== null">
 
             <app-text *ngIf="isTextFile(contentType)" [fileContent]="fileContent" [htmlElementViewContent]="htmlElementViewContent" [contentType]="contentType" ></app-text>
-            
-            <app-audio *ngIf="isAudioFile(contentType)" [fileAbsPath]="fileAbsPath" [fileRelativePath]="fileRelativePath"></app-audio>
-            <!--<app-image *ngIf="isImageFile(contentType)"></app-image>-->
-
+          
         </div>
-
 
       <div class="nothingToShow" *ngIf="fileContent === null">
 

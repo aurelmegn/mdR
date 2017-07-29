@@ -61,10 +61,8 @@ export class AppComponent implements OnInit, OnDestroy {
      * list of extensions supported by mdR
      * @type {[string,string,string,string,string,string]}
      */
-    supportedExtensions = [ 'md', 'svg', 'png', 'jpg', 'js', 'css', 'php', 'json', 'mp3' ];
+    supportedExtensions = [ 'md', 'svg', 'js', 'css', 'php', 'json'];
     textFileExtensions = ['md', 'js', 'css', 'php', 'json'];
-    audioFileExtensions = ['mp3'];
-    videoFileExtensions = ['mp4'];
     /**
      * the constructor of AppComponent
      * @param appService
@@ -75,7 +73,7 @@ export class AppComponent implements OnInit, OnDestroy {
      * initialize the mdR by going into the current folder
      */
     ngOnInit(): void {
-        this.go({folder : '/media/aurel/main/Autres/Ma musique/media mp3/'});
+        this.go({folder : './'});
     }
 
     /**
@@ -132,59 +130,30 @@ export class AppComponent implements OnInit, OnDestroy {
      */
     changeContent(event) {
         this.contentType = event.extension;
-/*        if (this.isAudioFile(event.extension)) {
-            this.fileContent = ' ';
-            this.fileAbsPath = event.abspath;
-            console.log('isaudio file')
-            return
-        }*/
-        if (!this.isTextFile(event.extension)) {
-            console.log('isaudio file')
-            this.fileContent = '';
-            this.fileAbsPath = event.abspath;
-            const data = {absolutePath: event.abspath};
-            this.subscription.add(
-                this.appService.getRelativePath(data).subscribe(
-                    res => {
-                        this.fileRelativePath.next(res);
-                        console.log(res)
-                    },
-                    error => {
-                        console.log(error);
-                        this.loader = false;
-                    }
-                )
-            );
-            return
-        }
-    const data: Object = { load : event.abspath, extension : event.extension};
-    this.loader = true;
 
-    this.subscription.add(
-        this.appService.loadContent(data).subscribe(
-            res => {
+        const data: Object = { load : event.abspath, extension : event.extension};
+        this.loader = true;
 
-              this.fileContent = res.content;
-              this.loadTime = res.buildtime;
-              this.htmlElementViewContent = `<pre class="highlight">` + this.fileContent + ` </pre>`;
-              this.loader = false;
-              console.log(res)
-            },
-            error => {
-              console.log(error);
-              this.loader = false;
-            }
-        )
-    );
+        this.subscription.add(
+            this.appService.loadContent(data).subscribe(
+                res => {
+
+                this.fileContent = res.content;
+                this.loadTime = res.buildtime;
+                this.htmlElementViewContent = `<pre class="highlight">` + this.fileContent + ` </pre>`;
+                this.loader = false;
+                console.log(res)
+                },
+                error => {
+                console.log(error);
+                this.loader = false;
+                }
+            )
+        );
   }
 
   isTextFile(contentype) {
     return this.textFileExtensions.includes(contentype)
   }
-  isAudioFile(contentype) {
-    return this.audioFileExtensions.includes(contentype)
-  }
-  isVideoFile(contentype) {
-    return this.videoFileExtensions.includes(contentype)
-  }
+
 }

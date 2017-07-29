@@ -10,7 +10,6 @@ import {NavComponent} from './navComponent/app-nav.component';
 import {CutFileNamePipe} from './pipe/fileNamePipe';
 import { SideNavComponent } from './sideNavComponent/side-nav.component';
 import { TextComponent } from './TextFileComponent/text.component';
-import {AudioComponent} from './AudioFileComponent/audio.component';
 import {FormsModule} from '@angular/forms';
 import {NgbModule, NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -22,7 +21,6 @@ import {NgbModule, NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
     SideNavComponent,
     DebugComponent,
     TextComponent,
-    AudioComponent
   ],
   imports: [
     BrowserModule,

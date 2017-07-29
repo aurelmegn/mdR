@@ -31,13 +31,6 @@ export class AppService {
             .catch(this.handleError)
     }
 
-    getRelativePath(data): Observable<any> {
-        data = this.serialize(data);
-        return this.http.post(ApiUrl.relativePathUrl, data, this.options)
-            .map(this.extractData)
-            .catch(this.handleError)
-    }
-
     loadContent(data): Observable<any> {
 
         data = this.serialize(data);
